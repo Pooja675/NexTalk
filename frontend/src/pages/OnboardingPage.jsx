@@ -5,10 +5,13 @@ import { completeOnboarding } from "../lib/api";
 import { CameraIcon, LoaderIcon, MapPinIcon, ShipWheel, ShuffleIcon } from "lucide-react";
 import { LANGUAGES } from "../constants";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
 
 const OnboardingPage = () => {
   const { authUser } = useAuthUser();
   const queryClient = useQueryClient;
+  const navigate = useNavigate()
 
   const [formState, setFormState] = useState({
     fullName: authUser?.fullName || "",
@@ -16,17 +19,22 @@ const OnboardingPage = () => {
     nativeLanguage: authUser?.nativeLanguage || "",
     learningLanguage: authUser?.learningLanguage || "",
     profilePic: authUser?.profilePic || "",
+    location: authUser?.location || ""
   });
 
   const { mutate: onboardingMutation, isPending } = useMutation({
     mutationFn: completeOnboarding,
     onSuccess: () => {
+     
       toast.success("Profile onboarded successfully.");
-      queryClient.invalidateQuries({ queryKey: ["authUser"] });
+      //queryClient.invalidateQuries({ queryKey: ["authUser"] });
+       navigate("/")
+      
+      
     },
 
     onError: (error) => {
-      toast.error(error.response.data.message)
+      toast.error(error.response?.data?.message) 
     }
   });
 
