@@ -8,7 +8,6 @@ const Sidebar = () => {
   const loaction = useLocation();
   const currentPath = location.pathname
 
-  console.log(currentPath)
   return (
     <aside className='w-64 bg-base-200 border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0'>
       <div className='p-5 boreder-b border-base-300'>

@@ -9,8 +9,8 @@ export async function getRecommendedUsers(req, res) {
         const recommendedUsers = await User.find({
             $and:[
                 {_id: {$ne: currentUserId}}, //exclude current user
-                {$id: {$nin: currentUser.friends}}, //exclude current's user friends 
-                {isOnboarded: true} 
+                {_id: {$nin: currentUser.friends}}, //exclude current's user friends 
+                {isOnBoared: true} 
 
             ]
         });
@@ -20,6 +20,8 @@ export async function getRecommendedUsers(req, res) {
         res.status(500).json({message:"Internal server error"})
     }
 }
+
+  
 
 export async function getMyFriends(req, res) {
     try {
