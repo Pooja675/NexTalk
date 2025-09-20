@@ -1,7 +1,7 @@
 # NexTalk - Video Calling Realtime Chat App & Social App
 
 <div align="center">
-  <img width="800" alt="zynkup" src="https://github.com/user-attachments/assets/e8c33d1a-1f96-4783-9bd3-cb309fba8d1f" />
+   <img height="800" alt="Home Page1" src="https://github.com/user-attachments/assets/938a8312-f8f6-471c-a3f8-e1e259da6ad8" />
 
   <p><em>NexTalk is a secure and feature-rich communication platform offering real-time chat, video calling, and a seamless social experience.</em></p>
   
